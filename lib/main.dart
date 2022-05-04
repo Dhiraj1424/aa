@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData.dark().copyWith(
 
-        scaffoldBackgroundColor: Color(0xFF0A0E21)
+        scaffoldBackgroundColor: const Color(0xFF0A0E21)
       ),
       
       home: const InputPage(title: 'BMI calculator'),
