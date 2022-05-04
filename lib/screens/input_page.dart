@@ -44,6 +44,7 @@ class _InputPageState extends State<InputPage> {
 
   Gender?selectedGender;
   int height=180;
+  int weight=10;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,7 +133,28 @@ class _InputPageState extends State<InputPage> {
             Expanded(
                 child: Row(
               children: [
-                Expanded(child: ReusableContainer(cardColor: kactiveCardColor)),
+                Expanded(child: ReusableContainer(cardColor: kactiveCardColor,
+                cardWidget: Column(
+                  children: [
+                    Text('WEIGHT',style: klabelTextStyle,),
+                    Text(weight.toString(),style: knumberTextStyle,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                       RoundIconButton(
+                         icon: FontAwesomeIcons.plus,
+                       ),
+                        SizedBox(width: 10),
+                      RoundIconButton(
+                         icon: FontAwesomeIcons.minus,
+                       ),
+                        
+                      ],
+                    )
+                  ],
+                ),
+                
+                )),
                 Expanded(
                     child: ReusableContainer(
                   cardColor: kactiveCardColor,
@@ -141,5 +163,24 @@ class _InputPageState extends State<InputPage> {
             )),
           ],
         ));
+  }
+}
+
+
+class RoundIconButton extends StatelessWidget {
+  const RoundIconButton({ Key? key,required this.icon}) : super(key: key);
+  final IconData icon;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      elevation: 6.0,
+      onPressed: (){},
+      constraints: BoxConstraints.tightFor(
+  width: 56.0,
+  height: 56.0,),
+      shape: CircleBorder(),
+      fillColor:Color(0xFF4C4F5E), 
+      child: Icon(icon),
+    );
   }
 }
