@@ -1,5 +1,8 @@
 import 'package:bmi_calculator/screens/input_page.dart';
+import 'package:bmi_calculator/screens/result_page.dart';
 import 'package:flutter/material.dart';
+
+import 'calculator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +22,14 @@ class MyApp extends StatelessWidget {
       ),
       
       home: const InputPage(title: 'BMI calculator'),
+      routes: {
+        
+        'routepage':(context)=>ResultPage(
+          bmiResult: CalculatorBrain().calculateBmi(),
+          interp: CalculatorBrain().getInter(),
+          resultText: CalculatorBrain().getResult(),
+        )
+      },
     );
   }
 }

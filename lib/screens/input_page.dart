@@ -4,6 +4,8 @@ import 'package:bmi_calculator/componets/reusable_container.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../calculator.dart';
+
 enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
@@ -58,7 +60,7 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                     child: ReusableContainer(
-                  ontap: () {
+                  ontapp: () {
                     selectedGender = Gender.male;
                   },
                   cardColor: selectedGender == Gender.male
@@ -71,7 +73,7 @@ class _InputPageState extends State<InputPage> {
                 )),
                 Expanded(
                     child: ReusableContainer(
-                  ontap: () {
+                  ontapp: () {
                     selectedGender = Gender.female;
                   },
                   cardColor: selectedGender == Gender.female
@@ -205,8 +207,34 @@ age.toString(),style:knumberTextStyle,
                 )),
               ],
             )),
+            ReusableButton(
+              onTap: (){
+              
+                Navigator.pushNamed(context, 'routepage');
+              },
+              text: 'calculate',
+            )
           ],
         ));
+  }
+}
+
+class ReusableButton extends StatelessWidget {
+  const ReusableButton({
+    Key? key,required this.onTap,required this.text
+  }) : super(key: key);
+
+final void Function() onTap;
+final String text;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        color:Colors.red,
+        child: Text(text,style: kLargegeButton,),
+      ),
+    );
   }
 }
 

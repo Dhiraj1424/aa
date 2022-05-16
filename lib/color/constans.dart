@@ -11,3 +11,26 @@ const knumberTextStyle=TextStyle(
                       fontSize:40,
                       fontWeight: FontWeight.w900
                     );
+
+const kLargegeButton=TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 25
+);
+const kTitleStyle=TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 40
+);
+
+const kResultTextStyle=TextStyle(
+  color: Colors.green,
+  fontSize: 22,
+  fontWeight:FontWeight.bold,
+);
+
+const KBMItext=TextStyle(
+  fontSize: 100,
+  fontWeight:FontWeight.bold,
+);
+const kbodyTextStyle=TextStyle(
+  fontSize: 22
+);

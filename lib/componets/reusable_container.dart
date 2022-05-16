@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 class ReusableContainer extends StatelessWidget {
   const ReusableContainer({
-    Key? key,required this.cardColor, this.cardWidget, this.ontap
+    Key? key,required this.cardColor, this.cardWidget, this.ontapp
   }) : super(key: key);
   final Color cardColor;
   final Widget? cardWidget;
-  final Function? ontap;
+  final Function? ontapp;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        ontap;
+        ontapp;
       },
       child: Container(
                     margin:const  EdgeInsets.all(10),
